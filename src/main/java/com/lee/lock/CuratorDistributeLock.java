@@ -21,13 +21,13 @@ public class CuratorDistributeLock {
         cf.start();
 
         final InterProcessMutex lock = new InterProcessMutex(cf, lockPath);
-        new Thread("thread-1"){
+        new Thread("thread-1") {
             @Override
             public void run() {
                 process(lock);
             }
         }.start();
-        new Thread("thread-2"){
+        new Thread("thread-2") {
             @Override
             public void run() {
                 process(lock);
